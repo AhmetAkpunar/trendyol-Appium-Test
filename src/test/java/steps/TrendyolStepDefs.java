@@ -54,10 +54,11 @@ public class TrendyolStepDefs {
 
     @Then("tap {string} tab")
     public void tapTab(String inputText) {
+        
         if (inputText.equals("anasayfa")) {
             Driver.getAppiumDriver().navigate().back();
             tp.anasayfaTabClick();
-            //Driver.getAppiumDriver().navigate().back();}
+
         }
         if (inputText.equals("sepetim")){
             tp.sepetimTabClick();
@@ -69,7 +70,7 @@ public class TrendyolStepDefs {
 
     @Then("tap {string}")
     public void tap(String str) {
-        //Driver.getAppiumDriver().navigate().back();
+
         if (str.equals("search")) {
             tp.kesfetKapatClick();
             tp.searchContainerClick();
@@ -83,11 +84,11 @@ public class TrendyolStepDefs {
 
     @Then("search {string}")
     public void search(String arg0) {
+        
         tp.searchTextBox(ConfigReader.getProperty("arananUrun"));
         ReusableMethods.bekle(1);
         tp.suggestTextClick();
         ReusableMethods.bekle(4);
-        ///ReusableMethods.scrollDownByCoordinates(540,540,1400,500);;
     }
 
     @Then("add first product to the cart")
@@ -114,10 +115,6 @@ public class TrendyolStepDefs {
         if (input.equals("sepeti Onayla")) {
             tp.sepetiOnaylaClick();
         }
-
-        //ReusableMethods.bekle(2);
-        //Driver.getAppiumDriver().navigate().back();
-        //tp.sepetiOnaylaClick();
     }
 
     @Then("enter credit card number")
@@ -130,8 +127,9 @@ public class TrendyolStepDefs {
 
     @Then("tap {string} link")
     public void tapLink(String text) {
+        
         if (text.equals("Ekle/Düzenle") ) {
-            //Driver.getAppiumDriver().navigate().back();
+            
             tp.gelAlIptal.click();
             ReusableMethods.bekle(1);
             tp.adresEkleLink.click();
@@ -146,39 +144,33 @@ public class TrendyolStepDefs {
 
             tp.adresIsimBox.sendKeys("Ahmet");
             tp.adresSoyAdBox.sendKeys("Akpunar");
-            tp.adresTlfBox.sendKeys("05424236929");
-            //Sehir seç
+            tp.adresTlfBox.sendKeys("05432100000");
+        
             tp.adresSehirClick.click();
             tp.adresSehirSendKeys.sendKeys("Elazığ");
             tp.adresSehirSec.click();
+        
             //İlçe
-            //tp.adresIlceClick.click();
             tp.adresIlceSendKeys.sendKeys("Merkez");
             tp.adresIlceSec.click();
+        
             //Mahalle
-            //tp.adressMahalleClick.click();
             tp.adresMahalleSendKeys.sendKeys("Ataşehir Mah");
             tp.adresMahalleSec.click();
-            //ReusableMethods.scrollDownByCoordinates(540,540,1400,500);
+
             //Tam Adres gir
-            //tp.tamAdresClick.click();
-            //ReusableMethods.bekle(1);
-            tp.tamAdresClick.sendKeys("Güneykent TOKI D BLok No:5");
+            tp.tamAdresClick.sendKeys("Atatürk bulvarı Test sokak No:5");
             Driver.getAppiumDriver().hideKeyboard();
             ReusableMethods.scrollDownByCoordinates(540,540,1400,500);
 
             tp.adresBaslikClick.sendKeys("Ev");
             Driver.getAppiumDriver().hideKeyboard();
-            //tp.adresBaslikSendKeys.sendKeys("Ev");
-
 
     }
 
     @Then("tap to the {string} button")
     public void tapToTheButton(String input) {
         //ReusableMethods.scrollDownByCoordinates(540,540,1400,500);
-
-
 
     }
 
@@ -187,26 +179,23 @@ public class TrendyolStepDefs {
     public void enterValidInfo(String arg0) {
         ReusableMethods.bekle(4);
         ReusableMethods.scrollDownByCoordinates(540,540,1400,400);
-        //ReusableMethods.bekle(1);
+       
         tp.cardNumber.sendKeys(ConfigReader.getProperty("cardNumber"));
         tp.cardNumberMonthBox.click();
         tp.cardNumberMonth.click();
-
-        //tp.cardNumberYearBox.click();
+        
         tp.cardNumberYear.click();
         tp.cvcBox.sendKeys(ConfigReader.getProperty("cvcNumber"));
-
-        //3D ödeme checkbox
-        //tp.threeDOdeme.click();
+        
         ReusableMethods.scrollDownByCoordinates(540,540,1600,400);
         ReusableMethods.bekle(2);
-        //tp.sozlesmeKabulCheckBox.click();
 
     }
 
 
     @Then("accept conditions")
     public void acceptConditions() {
+       
         tp.sozlesmeKabulCheckBox.click();
     }
 
@@ -217,11 +206,10 @@ public class TrendyolStepDefs {
 
     @Then("add first product to cart")
     public void addFirstProductToCart() {
+        
         ReusableMethods.scrollDownByCoordinates(540,540,1400,500);
         tp.logitech.click();
         ReusableMethods.bekle(2);
-        //closeSepetUyari.click();
-        //tp.sepeteEkleButtonClick();
     }
 
 
