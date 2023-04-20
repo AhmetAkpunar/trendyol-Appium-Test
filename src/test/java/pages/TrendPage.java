@@ -31,7 +31,6 @@ public class TrendPage {
     }
 
     AndroidDriver<AndroidElement> driver = (AndroidDriver)Driver.getAppiumDriver();
-    TouchAction touchAction;
 
     @FindBy(id = "trendyol.com:id/buttonSelectGenderMan")
     private MobileElement erkekButton;
@@ -112,7 +111,7 @@ public class TrendPage {
     @FindBy(id = "trendyol.com:id/editTextPhoneNumber")
     public MobileElement adresTlfBox;
 
-    //İl seçimi
+    //Adres ekle İl seçimi
     @FindBy(id = "trendyol.com:id/editTextCity")
     public MobileElement adresSehirClick;
     @FindBy(id = "trendyol.com:id/editTextSearchLocation")
@@ -120,7 +119,7 @@ public class TrendPage {
     @FindBy(id = "trendyol.com:id/textViewLocationName")
     public MobileElement adresSehirSec;
 
-    //İlçe Seçimi
+    //Adres ekle İlçe Seçimi
     @FindBy(id = "trendyol.com:id/editTextDistrict")
     public MobileElement adresIlceClick;
     @FindBy(id = "trendyol.com:id/editTextSearchLocation")
@@ -129,7 +128,7 @@ public class TrendPage {
     public MobileElement adresIlceSec;
 
 
-    //Mahalle Seçimi
+    //Adres Ekle Mahalle Seçimi
     @FindBy(id = "trendyol.com:id/editTextNeighborhood")
     public MobileElement adressMahalleClick;
     @FindBy(id = "trendyol.com:id/editTextSearchLocation")
@@ -137,21 +136,18 @@ public class TrendPage {
     @FindBy(id = "trendyol.com:id/textViewLocationName")
     public MobileElement adresMahalleSec;
 
-    //Tam adress
+    //Adres Ekle Tam adress
     @FindBy(id = "trendyol.com:id/editTextAddress")
     public MobileElement tamAdresClick;
 
     @FindBy(id = "trendyol.com:id/textinput_placeholder")
     public MobileElement tamAdresSendKeys;
-    // @FindBy(xpath = "hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.view.ViewGroup/android.widget.LinearLayout[4]/android.widget.FrameLayout/android.widget.TextView")
-    //public Mobile Element tamAdresSendKeys
 
-    //Adres Başlığı
+    //Adres Ekle Adres Başlığı
     @FindBy(id = "trendyol.com:id/editTextAddressName")
     public MobileElement adresBaslikClick;
     @FindBy(id = "trendyol.com:id/textinput_placeholder")
     public MobileElement adresBaslikSendKeys;
-
 
     //Hide Keys
     @FindBy(id = "trendyol.com:id/buttonSave")
@@ -160,8 +156,6 @@ public class TrendPage {
     @FindBy(id = "trendyol.com:id/textViewPaymentTypes")
     public MobileElement gelAlIptal;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.view.ViewGroup/android.view.View[2]")
-    public MobileElement krediKartiNo;
     public void erkekButtonClick(){erkekButton.click();}
     public void kesfetKapatClick(){kesfetKapat.click();}
     public void accountTabClick(){hesabimTab.click();}
@@ -197,25 +191,6 @@ public class TrendPage {
         ReusableMethods.bekle(2);
         closeSepetUyari.click();
         sepetimTabClick();
-        //Driver.getAppiumDriver().navigate().back();
-        /*
-        Dimension dim = Driver.getAppiumDriver().manage().window().getSize();
-        int height = dim.getHeight();
-        int width = dim.getWidth();
-        int startX = width/2; // başlangıç noktası ekranın tam ortası
-        int endX =  width/2; // sağa sola swipe olmicağı için bitiş noktası da width/2
-        int startY =(int) (height * 0.4);
-        int endY = (int) (height * 0.2);
-
-            touchAction = new TouchAction<>(Driver.getAppiumDriver());
-            touchAction.press(PointOption.point(startX,startY)).
-                        waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).
-                        moveTo(PointOption.point(endX,endY)).
-                        release().
-                        perform();
-
-         */
-
-
+   
     }
 }
